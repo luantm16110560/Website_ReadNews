@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -22,7 +21,6 @@ const routesConfig:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'cate',component:ControlCateComponent},
   {path:'createUpdate',component:CreateUpdateCateComponent},
-  {path:'menu',component:MenuComponent},
   {path:'**',component:HomeComponent}
 ]
 
@@ -30,7 +28,6 @@ const routesConfig:Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    MenuComponent,
     SlideComponent,
     LoginComponent,
     RegisterComponent,

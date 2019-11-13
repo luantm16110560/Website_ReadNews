@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../Services/category.service';
 import {Router} from '@angular/router';
 import {Category} from '../../category';
-import {MenuComponent} from '../../components/menu/menu.component';
+import {HomeComponent} from '../../components/home/home.component';
 @Component({
   selector: 'app-create-update-cate',
   templateUrl: './create-update-cate.component.html',
@@ -18,6 +18,7 @@ export class CreateUpdateCateComponent implements OnInit {
   ngOnInit() {
     this.xxx = this.cateService.getter()
   }
+ 
   createOrUpdate()
   {
     if(this.xxx._id==undefined){
@@ -26,7 +27,9 @@ export class CreateUpdateCateComponent implements OnInit {
       this.cateService.createCategory(this.xxx).subscribe(
         data=>{
           console.log(data);
-          this.router.navigate(['/cate']);
+          this.router.navigate(['/home']);
+        //  this.router.navigate(['/cate']);
+         
         //   this.router.navigateByUrl('/menu', { skipLocationChange: true }).then(() => {
         //     this.router.navigate(['/cate']);
         // });
