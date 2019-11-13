@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Danh sách thể loại</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Thể loại</th>
+                    <th>Các tin tức</th>
+                    <th class="glyphicon glyphicon-wrench">Tùy chỉnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cate of listCate">
+                    <!-- <td>{{cate._id}}</td> -->
+                    <td>{{cate.name}}</td>
+                    <td style="max-width: 100px;">{{cate.News_id}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteCate(cate)" style="width: 55px;height:  38px;">Xóa</button>&nbsp;
+                        <button class="btn btn-primary" (click)="updateCate(cate)" style="width: 55px;height:  38px;">Sửa</button>
+                    </td>
+
+
+                </tr>
+                <br>
+                <a href="#" (click)="newCate($event)" class="btn btn-success" style="width: 300;height: 38px;">Thêm mới</a>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
