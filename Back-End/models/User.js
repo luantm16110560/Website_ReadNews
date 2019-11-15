@@ -8,6 +8,7 @@ var userSchema = new Schema({
     username: String,
     password: String
 });
+var thisHash;
 //hash the password before the user is saved
 userSchema.pre('save', function(next) {
     var user = this;
@@ -16,19 +17,20 @@ userSchema.pre('save', function(next) {
     bcrypt.hash(user.password, 10, function(err, hash) {
         if (err) return next(err);
         user.password = hash;
+        this.thisHash = hash;
         next();
     });
 });
 // userSchema.methods.comparePassword = function(password) {
-//     bcrypt.compare('somePassword', hash, function(err, res) {
+//     bcrypt.compare(password, thisHash, function(err, res) {
 //         if (res) {
 //             return true
 //         } else {
 //             return false;
 //         }
 //     });
-//     var user = this;
-//     return bcrypt.compareSync(password, user.password);
+//     // var user = this;
+//     // return bcrypt.compareSync(password, user.password);
 // };
 
 module.exports = mongoose.model('tbl_users', userSchema);
