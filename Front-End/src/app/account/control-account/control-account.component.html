@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Danh sách tài khoản</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of listAccount">
+                    <!-- <td>{{cate._id}}</td> -->
+                    <td>{{user.name}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteAccount(user)" style="width: 55px;height:  38px;">Xóa</button>&nbsp;
+                        <button class="btn btn-primary" (click)="updateAccount(user)" style="width: 55px;height:  38px;">Sửa</button>
+                    </td>
+
+
+                </tr>
+                <br>
+                <a href="#" (click)="newAccount($event)" class="btn btn-success" style="width: 300;height: 38px;">Thêm mới</a>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

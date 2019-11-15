@@ -1,0 +1,21 @@
+<form (ngSubmit)="createOrUpdate()">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="acc.name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" name="phone" [(ngModel)]="acc.phone" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="acc.username" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="acc.password" class="form-control">
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-success">
+</form>

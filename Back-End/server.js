@@ -3,10 +3,11 @@ var express = require('express');
 var port = process.env.port || 3000;
 var app = express();
 var cateRoute = require('./routes/cate');
+var userRoute = require('./routes/user');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-
+mongoose.set('useCreateIndex', true);
 
 mongoose.connect('mongodb://localhost:27017/news', { useNewUrlParser: true, useUnifiedTopology: true }, function(err) {
     if (err) {
@@ -19,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/', cateRoute);
-
+app.use('/', userRoute);
 
 
 http.createServer(app).listen(port);

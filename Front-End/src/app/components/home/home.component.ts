@@ -18,5 +18,8 @@ export class HomeComponent  {
       this.arrCate=data;
     });
   }
+  getIDByName(name){
+    console.log(name);
+  }
 
 }

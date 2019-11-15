@@ -13,6 +13,8 @@ import { ControlCateComponent } from './category/control-cate/control-cate.compo
 import { CreateUpdateCateComponent } from './category/create-update-cate/create-update-cate.component';//import Routes Module
 import {FormsModule} from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { ControlAccountComponent } from './account/control-account/control-account.component';
+import { CreateUpdateUserComponent } from './account/create-update-user/create-update-user.component';
 
 const routesConfig:Routes = [
  
@@ -20,6 +22,8 @@ const routesConfig:Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'cate',component:ControlCateComponent},
+  {path:'account',component:ControlAccountComponent},
+  {path:'createUpdateAccount',component:CreateUpdateUserComponent},
   {path:'createUpdate',component:CreateUpdateCateComponent},
   {path:'**',component:HomeComponent}
 ]
@@ -33,7 +37,9 @@ const routesConfig:Routes = [
     RegisterComponent,
     ControlCateComponent,
     CreateUpdateCateComponent,
-    HomeComponent
+    HomeComponent,
+    ControlAccountComponent,
+    CreateUpdateUserComponent
   ],
   imports: [
     BrowserModule,

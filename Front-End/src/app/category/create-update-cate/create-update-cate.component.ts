@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CategoryService} from '../../Services/category.service';
 import {Router} from '@angular/router';
 import {Category} from '../../category';
-import {HomeComponent} from '../../components/home/home.component';
+
 @Component({
   selector: 'app-create-update-cate',
   templateUrl: './create-update-cate.component.html',
