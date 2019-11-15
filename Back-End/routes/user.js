@@ -9,13 +9,14 @@ router.post('/user/create', (req, res, next) => {
         phone: req.body.phone,
         username: req.body.username,
         password: req.body.password,
+        isAdmin: false
 
     });
     newUser.save((err, user) => {
         if (err) {
             if (err.code == 11000)
-            // return res.json({ success: false, message: 'A user with that username already exists. ' });
-                console.log('User da ton tai');
+                return res.json({ success: false, message: 'A user with that username already exists. ' });
+            //  console.log('User da ton tai');
             else
                 return res.send(err);
         }

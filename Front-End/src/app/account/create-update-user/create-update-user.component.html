@@ -1,21 +1,63 @@
-<form (ngSubmit)="createOrUpdate()">
-    <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" [(ngModel)]="acc.name" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Phone</label>
-        <input type="text" name="phone" [(ngModel)]="acc.phone" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" name="username" [(ngModel)]="acc.username" class="form-control">
-    </div>
+<!------ Include the above in your HEAD tag ---------->
 
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" [(ngModel)]="acc.password" class="form-control">
-    </div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-    <input type="submit" value="Submit" class="btn btn-success">
-</form>
+<div class="container">
+
+
+    <article class="card-body mx-auto" style="width: 30em;">
+        <h4 class="card-title mt-3 text-center">Đăng ký</h4>
+
+        <form (ngSubmit)="createOrUpdate()">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input type="text" name="name" [(ngModel)]="acc.name" class="form-control" placeholder="Họ tên ">
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                </div>
+
+                <input type="text" name="phone" [(ngModel)]="acc.phone" class="form-control" placeholder="Điện thoại">
+            </div>
+
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+
+                <input type="text" name="username" [(ngModel)]="acc.username" class="form-control" placeholder="Username">
+            </div>
+            <!-- form-group// -->
+
+            <!-- form-group end.// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input type="password" name="password" [(ngModel)]="acc.password" class="form-control" placeholder="Mật khẩu">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input name="id_cppassword " class="form-control" placeholder="Xác nhận mật khẩu" type="password">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Tạo tài khoản  </button>
+            </div>
+            <!-- form-group// -->
+            <p class="text-center">Đã có tài khoản? <a routerLink="/login">Đăng nhập</a> </p>
+        </form>
+
+    </article>
+
+    <!-- card.// -->
+
+</div>

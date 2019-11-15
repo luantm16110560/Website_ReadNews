@@ -26,7 +26,7 @@ export class CreateUpdateUserComponent implements OnInit {
       this.accountService.createAccount(this.acc).subscribe(
         data=>{
           console.log(data);
-          this.router.navigate(['/account']);
+          this.router.navigate(['/home']);
         //  this.router.navigate(['/cate']);
          
         //   this.router.navigateByUrl('/menu', { skipLocationChange: true }).then(() => {

@@ -12,7 +12,7 @@ export class ControlAccountComponent implements OnInit {
   constructor(private accountService:AccountService,private router:Router) { }
 
   ngOnInit() {
-    this.readAccount();
+  //  this.readAccount();
   }
   newAccount(event:any){
     event.preventDefault();
@@ -20,35 +20,35 @@ export class ControlAccountComponent implements OnInit {
     this.router.navigate(['/createUpdateAccount']);
    
   }
-  readAccount(){
-    this.accountService.readAccount().subscribe(
-      data=>{
-        console.log(data);
-        this.listAccount = data;
-      },
-      error=>{
-        console.log(error);
-      }
-    )
-  }
-  updateAccount(acc)
-  {
-    this.accountService.setter(acc);
-    this.router.navigate(['/createUpdateAccount']);
-  }
-  deleteAccount(acc)
-  {
-    this.accountService.deleteAccount(acc._id).subscribe(
-      data=>{
-        this.listAccount.splice(this.listAccount.indexOf(acc),1);
+  // readAccount(){
+  //   this.accountService.readAccount().subscribe(
+  //     data=>{
+  //       console.log(data);
+  //       this.listAccount = data;
+  //     },
+  //     error=>{
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+  // updateAccount(acc)
+  // {
+  //   this.accountService.setter(acc);
+  //   this.router.navigate(['/createUpdateAccount']);
+  // }
+  // deleteAccount(acc)
+  // {
+  //   this.accountService.deleteAccount(acc._id).subscribe(
+  //     data=>{
+  //       this.listAccount.splice(this.listAccount.indexOf(acc),1);
 
-     //   Xóa 1 phần tử từ vị trí số 3
-        // var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
-        // var removed = myFish.splice(3, 1);
-      },
-      error=>{
+  //    //   Xóa 1 phần tử từ vị trí số 3
+  //       // var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+  //       // var removed = myFish.splice(3, 1);
+  //     },
+  //     error=>{
 
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 }
