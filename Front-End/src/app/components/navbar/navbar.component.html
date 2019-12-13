@@ -20,7 +20,7 @@
                 <a class="nav-link" routerLink="/login">Đăng nhập</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/home">Đăng xuất</a>
+                <a class="nav-link" (click)="onLogoutClick()">Đăng xuất</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/account">Đăng ký</a>
@@ -29,7 +29,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">            Trang của admin</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" routerLink="/cate">Quản lý thể loại tin tức</a>
-                    <a class="dropdown-item" href="#">Đăng tin tức</a>
+                    <a class="dropdown-item" routerLink="/add_news">Đăng tin tức</a>
                     <a class="dropdown-item" routerLink="/account">Quản lý tài khoản </a>
                 </div>
             </li>

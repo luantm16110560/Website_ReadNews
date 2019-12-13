@@ -23,6 +23,10 @@ router.post('/authenticate', function(req, res) {
                     mesage: 'Authentication failed. Wrong password.'
                 });
             } else {
+                var thisuser = {
+                    username: user.username,
+                    name: user.name
+                }
                 var token = jwt.sign({
                     name: user.name,
                     username: user.username
@@ -32,7 +36,8 @@ router.post('/authenticate', function(req, res) {
                 res.json({
                     success: true,
                     mesage: 'User da duoc cap phat token',
-                    token: token
+                    token: token,
+                    user: thisuser
                 });
             }
         }

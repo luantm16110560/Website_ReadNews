@@ -8,6 +8,7 @@ var app = express();
 var cateRoute = require('./routes/cate');
 var userRoute = require('./routes/user');
 var authRoute = require('./routes/auth');
+var newRoute = require('./routes/news');
 
 
 var mongoose = require('mongoose');
@@ -33,6 +34,7 @@ app.use(morgan('dev'));
 app.use('/', cateRoute);
 app.use('/', userRoute);
 app.use('/', authRoute);
+app.use('/', newRoute);
 
 
 http.createServer(app).listen(port);

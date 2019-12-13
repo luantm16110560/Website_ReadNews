@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticateService} from '../../Services/authenticate.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +11,9 @@ import {AuthenticateService} from '../../Services/authenticate.service';
 export class LoginComponent implements OnInit {
 
   loginUserData={}
-  constructor(private authService:AuthenticateService) { }
+  public message:any;
+  constructor(private authService:AuthenticateService,  private router:Router,private flashMessage: FlashMessagesService
+    ) { }
 
   ngOnInit() {
 
@@ -16,8 +21,21 @@ export class LoginComponent implements OnInit {
   AuthLogin(){
     this.authService.AuthUser(this.loginUserData)
     .subscribe(
-      res => console.log("login success"),
-      err =>console.log(err)
+      (data:any)=>{
+        
+       // console.log(data.mesage);
+        this.message=data.mesage;
+        if(data.success){
+          this.authService.storeUserData(data.token,data.user);
+          this.router.navigate(['home'])
+        }
+   
+      },
+      // err =>{
+      //   console.log(err)
+        
+      
+      // }
     )
 
   }

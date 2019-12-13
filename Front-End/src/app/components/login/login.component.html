@@ -25,6 +25,11 @@
                 <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Đăng nhập bằng Twitter</a>
                 <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> Đăng nhập bằng facebook</a>
             </p>
+            <div *ngIf="message" class="alert alert-danger">
+
+                {{message}}
+
+            </div>
 
         </div>
     </div>

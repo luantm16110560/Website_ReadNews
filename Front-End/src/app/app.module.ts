@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ControlAccountComponent } from './account/control-account/control-account.component';
 import { CreateUpdateUserComponent } from './account/create-update-user/create-update-user.component';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AddNewsComponent } from './add-news/add-news.component';
 const routesConfig:Routes = [
  
   {path:'home',component:HomeComponent},
@@ -25,6 +27,7 @@ const routesConfig:Routes = [
   {path:'account',component:ControlAccountComponent},
   {path:'createUpdateAccount',component:CreateUpdateUserComponent},
   {path:'createUpdate',component:CreateUpdateCateComponent},
+  {path:'add_news',component:AddNewsComponent},
   {path:'**',component:HomeComponent}
 ]
 
@@ -39,13 +42,15 @@ const routesConfig:Routes = [
     CreateUpdateCateComponent,
     HomeComponent,
     ControlAccountComponent,
-    CreateUpdateUserComponent
+    CreateUpdateUserComponent,
+    AddNewsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routesConfig),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlashMessagesModule.forRoot(),
 
   ],
   providers: [],
